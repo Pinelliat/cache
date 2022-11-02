@@ -81,7 +81,7 @@ app.use(async (ctx) => {
      * @title 协商缓存
      * @descript etag、if-none-match  Last-Modified、if-modified-since
      */
-    ctx.set('Cache-Control', 'no-cache')
+    // ctx.set('Cache-Control', 'no-cache')
     const fileBuffer = await parseStatic(filePath)
     const ifNoneMatch = ctx.request.headers['if-none-match']
     const hash = crypto.createHash('md5')
